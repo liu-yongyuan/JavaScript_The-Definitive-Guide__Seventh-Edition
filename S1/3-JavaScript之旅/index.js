@@ -98,4 +98,84 @@ console.log((x1 === 2) && ( y1 === 3));
 console.log((x1 > 3) || (y1 < 3));
 console.log(!(x1 === y1));
 
+// 函数是可以调用的有参数的 JavaScript 代码块
+function plus1(x){
+  return x + 1;
+}
+console.log(plus1(y1));  // => 4: y1 是 3, 因此这次调用返回的是 3 + 1
 
+let square = function (x) {
+  return x * x;
+}
+console.log(square(y1)); // => 9: y1 是 3, 3 * 3 等于 9
+
+const plus1_1 = x => x + 1; // 输入 x 映射为输出 x + 1
+const square_1 = x => x * x; // 输入 x 映射为 x * x
+console.log(plus1_1(y1)) // => 4
+console.log(square_1(y1)) // => 9
+
+let a = []; // empty arrary
+console.log(a) // => []
+a.push(1, 2, 3); // push() 方法为数组添加元素
+console.log(a) // => [1, 2, 3]
+a.reverse();  // 另一个方法 reverse() 对元素进行排序
+console.log(a) // => [3, 2, 1]
+
+points.dist = function(){
+  let p1 = this[0];
+  let p2 = this[1];
+  let a = p2.x - p1.x;
+  let b = p2.y - p1.y;
+  return Math.sqrt(a * a + b * b);
+}
+console.log(points.dist()) // Math.SQRT2
+
+function abs(x){
+  if(x >= 0){
+    return x;
+  }else{
+    return -x;
+  }
+}
+console.log(abs(-10) === abs(10)) // => true
+
+function sum(array){
+  let sum = 0;
+  for(let x of array){
+    sum += x;
+  }
+  return sum;
+}
+console.log(sum(primes)) // => 28
+
+function factorial(n){
+  let product = 1;
+  while(n > 1){
+    product *= n;
+    n--;
+  }
+  return product;
+}
+console.log(factorial(4)) // => 24: 1*4*3*2
+
+function factorial2(n){
+  let i, product = 1;
+  for(i = 2; i <= n; i++){
+    product *= i;
+  }
+  return product;
+}
+console.log(factorial2(5)); // => 120
+
+class Point{
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+  distance(){
+    return Math.sqrt(this.x * this.x + this.y * this.y)
+  }
+}
+let p = new Point(1, 1);
+console.log(p.distance()) //=> Math.SQRT2
+console.log(Math.SQRT2) // => Math.SQRT2
