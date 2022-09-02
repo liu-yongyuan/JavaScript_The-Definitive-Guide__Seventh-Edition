@@ -113,3 +113,5 @@ console.log(isNaN("10")); // => true
 
 console.log(Number.isNaN(Number("aax"))); // => true
 console.log(isNaN(Number("aax"))); // => true
+console.log(isNaN(Infinity)); // => false
+console.log(Number.isNaN(Infinity)); // => false
