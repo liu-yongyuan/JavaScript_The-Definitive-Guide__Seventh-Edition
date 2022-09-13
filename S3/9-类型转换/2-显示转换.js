@@ -38,6 +38,11 @@ console.log(x.toPrecision(10)); // => 123456.7890
 
 console.log("\n====== XXX ======\n");
 
+/**
+ * 1.parseInt 和 parseFloat 都会忽略开头的空格
+ * 2.都会尽可能的解析
+ * 3.首字母如果不是有效的数值字面量, 它们会返回 NaN
+ */
 console.log(parseInt("3 blind mice")); // => 3
 console.log(parseFloat(" 3.14 meters")); // => 3.14
 console.log(parseInt("-12.34")); // => -12
@@ -48,3 +53,14 @@ console.log(parseFloat(".1")); // => 0.1
 console.log(parseInt("0.1")); // => 0
 console.log(parseInt(".1")); // => NaN: 不能以 . 开头
 console.log(parseFloat("$72.47")); // => NaN: 不能以 $ 开头
+
+console.log("\n====== XXX ======\n");
+/**
+ * parseInt 接收可选的第二个参数, 用于指定要解析数值的底(基)数
+ * 合法值是 2~36
+ */
+console.log(parseInt("11", 2)); // => 3
+console.log(parseInt("ff", 16)); // => 255
+console.log(parseInt("zz", 36)); // => 1295
+console.log(parseInt("077", 8)); // => 63
+console.log(parseInt("077", 10)); // => 77
