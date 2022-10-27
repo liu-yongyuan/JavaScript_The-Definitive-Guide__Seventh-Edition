@@ -1,0 +1,9 @@
+console.log(typeof undefined); // => undefined
+console.log(typeof null); // => object
+console.log(typeof true, typeof false); // => boolean boolean
+console.log(typeof NaN, typeof 1); // => number number
+console.log(typeof 1n); // => bigint
+console.log(typeof ""); // => string
+console.log(typeof Symbol('x')); // => symbol
+console.log(typeof function(){}); // => function
+console.log(typeof {}); // => object
