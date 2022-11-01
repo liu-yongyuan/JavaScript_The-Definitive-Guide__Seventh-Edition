@@ -12,6 +12,7 @@ for (const element of data) {
   sum += element;
 }
 console.log(sum); // => 45
+console.log("\n====== XXX ======\n");
 
 /**
  * 数组迭代是实时的,即迭代过程中的变化可能会影响迭代的输出.
@@ -38,6 +39,7 @@ console.log(sum1, data1); // =>
 1110
 ]
  */
+console.log("\n====== XXX ======\n");
 
 let o = { x: 1, y: 2, z: 3 };
 try {
@@ -47,12 +49,14 @@ try {
 } catch (e) {
   console.error(e); // => TypeError: o is not iterable
 }
+console.log("\n====== XXX ======\n");
 
 let keys = "";
 for (let k of Object.keys(o)) {
   keys += k;
 }
 console.log(keys); // => xyz
+console.log("\n====== XXX ======\n");
 
 let sum2 = 0;
 for (let v of Object.values(o)) {
@@ -65,3 +69,44 @@ for (let [k, v] of Object.entries(o)) {
   pairs += k + v;
 }
 console.log(pairs); // => x1y2z3
+console.log("\n====== XXX ======\n");
+
+/**
+ * for/of 与字符串
+ */
+let frequency = {};
+for (let letter of "mississippi") {
+  if (frequency[letter]) {
+    frequency[letter]++;
+  } else {
+    frequency[letter] = 1;
+  }
+}
+console.log(frequency); // => { m: 1, i: 4, s: 4, p: 2 }
+console.log("\n====== XXX ======\n");
+
+
+/**
+ * for/of 与 Set 和 Map
+ */
+let text = "Na na na na na na na na na Batman!";
+let wordSet = new Set(text.split(" "));
+let unique = [];
+for(let word of wordSet){
+  unique.push(word)
+};
+console.log(unique); // => [ 'Na', 'na', 'Batman!' ]
+
+let m = new Map([[1, "one"]]);
+for(let [key, value] of m){
+  console.log(`${key} : ${value}`); // => 1 : one
+}
+console.log("\n====== XXX ======\n");
+
+async function printSteam(stream){
+  for await (let chunk of stream){
+    console.log(chunk)
+  }
+}
+
+console.log("\n====== XXX ======\n");
