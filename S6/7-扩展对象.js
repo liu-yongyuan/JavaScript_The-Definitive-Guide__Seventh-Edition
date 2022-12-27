@@ -103,3 +103,7 @@ const o8 = subtract({ x: 1, y: 2, z: 3 }, { x: 1, y: 2 }, { y: 3 });
 console.log(o8);
 console.log(subtract({ x: 1, y: 2, z: 3 }, { z: 1, y: 2, x: 1 }));
 console.log("\n====== XXX ======\n");
+
+const o9 = Object.assign({}, {x:undefined, a:1});
+console.log(o9); // => { x: undefined, a: 1 }
+console.log("\n====== XXX ======\n");
