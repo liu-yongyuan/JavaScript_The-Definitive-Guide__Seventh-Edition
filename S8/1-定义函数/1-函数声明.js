@@ -29,11 +29,17 @@ console.log("\n====== XXX ======\n");
 /**
  * 计算阶乘的递归函数(调用自身的函数)
  * 回忆一下: x! 是 x 与所有小于它的正整数的积
- * @param {*} x 
- * @returns 
+ * @param {*} x
+ * @returns
  */
 function factorial(x) {
   if (x <= 1) return 1;
   return x * factorial(x - 1);
 }
-console.log(factorial(10))
+console.log(factorial(10));
+
+module.exports = {
+  printprops,
+  distance,
+  factorial,
+};
