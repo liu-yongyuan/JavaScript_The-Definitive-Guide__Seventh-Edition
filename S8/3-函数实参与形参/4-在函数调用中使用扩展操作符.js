@@ -18,4 +18,4 @@ function benchmark(n) {
   return sum;
 }
 
-console.log(timed(benchmark)(1_000_000)); // => 499999500000
+console.log(timed(benchmark)(1_000_000)); // => 500000500000
