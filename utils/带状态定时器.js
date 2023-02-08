@@ -20,7 +20,7 @@ const square = (x) => {
     or
 
     executeCrondVia.stop().repeat(square).execute(10);
-  }, 5000);
+  }, 5000); 5 秒后更换执行函数并执行
  * 
  * @param {*} f 
  * @param {*} ms 
@@ -35,12 +35,14 @@ function crond(f, ms) {
   let executeFunction = f;
 
   function execute(...args) {
-    let result = executeFunction.apply(this, args);
-    if (id) {
-      clearTimeout(id);
-    }
+    //清除执行
+    stop();
+
+    //设置执行
     id = setTimeout(execute, ms, ...args);
-    return result;
+
+    //执行结果
+    return executeFunction.apply(this, args);
   }
 
   function repeat(f) {
@@ -49,7 +51,9 @@ function crond(f, ms) {
   }
 
   function stop() {
-    clearTimeout(id);
+    if (id) {
+      clearTimeout(id);
+    }
     return this;
   }
 
