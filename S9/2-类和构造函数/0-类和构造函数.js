@@ -21,3 +21,7 @@ let r = new Range(1, 3);
 console.log(r.includes(2));
 console.log(r.toString());
 console.log([...r]);
+
+module.exports = {
+  Range,
+};
