@@ -52,3 +52,7 @@ console.log(c.plus(d).toString()); // => {5, 5}
 console.log(c.magnitude); // => 3.6055512754639896
 console.log(Complex.product(c, d)); // => Complex { r: 0, i: 13 }
 console.log(Complex.ZERO.toString()); // => {0, 0}
+
+module.exports = {
+  Complex,
+};
