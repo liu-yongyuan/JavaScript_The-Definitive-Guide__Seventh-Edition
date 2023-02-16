@@ -25,3 +25,20 @@ let cn = Intl.NumberFormat("zh", {
   currency: "CNY",
 });
 log(cn.format(10)); // => ¥10.00
+next();
+
+let data = [0.05, 0.75, 1];
+let formatData = Intl.NumberFormat(undefined, {
+  style: "percent",
+  minimumFractionDigits: 1,
+  maximumFractionDigits: 1,
+}).format;
+log(data.map(formatData)); // => [ '5.0%', '75.0%', '100.0%' ]
+next();
+
+let arabic = Intl.NumberFormat("ar", { useGrouping: false }).format;
+log(arabic(123456789)); // => ١٢٣٤٥٦٧٨٩
+next();
+
+let hindi = Intl.NumberFormat("hi-IN-u-nu-deva").format;
+log(hindi(1234567890)); // => १,२३,४५,६७,८९०
