@@ -7,3 +7,9 @@ let copy = JSON.parse(s);
 log(s); // => {"s":"","n":0,"a":[true,false,null]}
 log(copy); // => { s: '', n: 0, a: [ true, false, null ] }
 log(copy === o); // => false
+next();
+
+function deepcopy(o) {
+  return JSON.parse(JSON.stringify(o));
+}
+log(deepcopy(o))
